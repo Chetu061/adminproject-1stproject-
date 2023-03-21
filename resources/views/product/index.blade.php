@@ -1,6 +1,10 @@
+
 @extends('layouts.master')
+@section('css')
 @section('content')
 
+
+  
 
 
      <!-- Main content -->
@@ -24,7 +28,7 @@
                  </div>
                     @endif
                     
-           <table class="table table-bordered table-hover">
+           <table class="table table-bordered table-hover" id="dataTable">
                   <thead>
                     <tr>
                       <th style="width:5px">ID</th>
@@ -65,19 +69,34 @@
                 </table>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-              </div>
+ 
             </div>
 </div>
       </div>
       </div><!-- /.container-fluid -->
+     
     </section>
   </div>
+
+
+
   @endsection
+  {{-- datatable code --}}
+  @push('scripts')
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js">
+  </script>
+
+  <script>
+
+$(document).ready(function() {
+  
+    $('#dataTable').DataTable();//dataTable is id of <table>
+});
+</script>
+  @endpush
+
+   
+ 
+ 
+  

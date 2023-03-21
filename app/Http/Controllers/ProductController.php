@@ -41,6 +41,7 @@ public function index()
 public function edit($id)
 {
     $data=Product::find($id);
+
     $cust=Category::all();
     return view('product.edit',compact('data','cust'));
 }
